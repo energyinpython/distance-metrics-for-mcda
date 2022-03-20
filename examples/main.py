@@ -88,9 +88,10 @@ def plot_boxplot(data):
     data : dataframe
         dataframe with correlation values between compared rankings
     """
-    df_melted = pd.melt(data)
+    
     plt.figure(figsize = (7, 4))
-    ax = sns.boxplot(x = 'variable', y = 'value', data = df_melted, width = 0.5)
+    
+    ax = data.boxplot()
     ax.grid(True, linestyle = '--')
     ax.set_axisbelow(True)
     ax.set_xlabel('Alternatives', fontsize = 12)
@@ -147,20 +148,20 @@ def main():
     distance_metrics = [
         dists.euclidean,
         dists.manhattan,
-        #dists.hausdorff,
-        #dists.correlation,
-        #dists.chebyshev,
-        #dists.cosine,
-        dists.squared_euclidean,
+        # dists.hausdorff,
+        # dists.correlation,
+        # dists.chebyshev,
+        # dists.cosine,
+        # dists.squared_euclidean,
         dists.bray_curtis,
         dists.canberra,
         dists.lorentzian,
-        dists.jaccard,
-        #dists.dice,
-        #dists.hellinger,
+        # dists.jaccard,
+        # dists.dice,
+        dists.hellinger,
         dists.matusita,
         dists.squared_chord,
-        #dists.pearson_chi_square,
+        dists.pearson_chi_square,
         dists.squared_chi_square
     ]
     
@@ -183,6 +184,7 @@ def main():
     # plot column chart of alternatives rankings
     plot_barplot(df_rankings, 'Alternatives', 'Rank', 'Distance metric')
 
+    
     # Plot heatmaps of rankings correlation coefficient
     # Create dataframe with rankings correlation values
     results = copy.deepcopy(df_rankings)
