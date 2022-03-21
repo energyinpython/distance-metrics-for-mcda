@@ -7,9 +7,7 @@ import numpy as np
 class Test_Spearman(unittest.TestCase):
 
     def test_spearman(self):
-        """Test based on paper Sałabun, W., & Urbaniak, K. (2020, June). A new coefficient of rankings similarity 
-        in decision-making problems. In International Conference on Computational Science 
-        (pp. 632-645). Springer, Cham."""
+        """Test based on anonymized reference."""
 
         
         R = np.array([1, 2, 3, 4, 5])
@@ -23,9 +21,7 @@ class Test_Spearman(unittest.TestCase):
 class Test_Weighted_Spearman(unittest.TestCase):
 
     def test_weighted_spearman(self):
-        """Test based on paper Sałabun, W., & Urbaniak, K. (2020, June). A new coefficient of rankings similarity 
-        in decision-making problems. In International Conference on Computational Science 
-        (pp. 632-645). Springer, Cham."""
+        """Test based on anonymized reference."""
 
         
         R = np.array([1, 2, 3, 4, 5])
@@ -39,9 +35,7 @@ class Test_Weighted_Spearman(unittest.TestCase):
 class Test_Pearson(unittest.TestCase):
 
     def test_pearson(self):
-        """Test based on paper Sałabun, W., & Urbaniak, K. (2020, June). A new coefficient of rankings similarity 
-        in decision-making problems. In International Conference on Computational Science 
-        (pp. 632-645). Springer, Cham."""
+        """Test based on anonymized reference."""
 
         
         R = np.array([1, 2, 3, 4, 5])
