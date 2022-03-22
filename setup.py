@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="distance-metrics-mcda",
-    version="0.0.2",
+    version="0.0.3",
     author="Aleksandra Ba",
     author_email="aleksandra.baczkiewicz@phd.usz.edu.pl",
     description="Package for Multi-Criteria Decision Analysis with distance-based TOPSIS method",
@@ -19,4 +19,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",
+	install_requires=['numpy', 'scipy'],
 )

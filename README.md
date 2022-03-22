@@ -56,3 +56,5 @@ Objective weighting methods:
 
 - Entropy weighting method `entropy_weighting`
 - CRITIC weighting method `critic_weighting`
+
+Example of usage of `distance-metrics-mcda` are provided on [GitHub](https://github.com/energyinpython/distance-metrics-for-mcda) in [examples](https://github.com/energyinpython/distance-metrics-for-mcda/tree/main/examples)
