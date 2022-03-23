@@ -7,7 +7,7 @@ def rank_preferences(pref, reverse = True):
     Parameters
     ----------
         pref : ndarray
-            vector with MCDM preference function values for alternatives
+            vector with MCDA preference function values for alternatives
         reverse : bool
             Boolean variable which is True for MCDA methods which rank alternatives in descending
             order and False for MCDA methods which rank alternatives in ascending
