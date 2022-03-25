@@ -72,7 +72,7 @@ Returns
 		Vector with preference values of alternatives. Alternatives have to be ranked in descending order according to preference values.
 
 .. code-block:: python
-	
+
 	import numpy as np
 	from distance_metrics_mcda.mcda_methods import TOPSIS
 	from distance_metrics_mcda import normalizations as norms
@@ -134,7 +134,7 @@ Returns
 		Value of correlation coefficient between two vectors
 
 .. code-block:: python
-	
+
 	import numpy as np
 	from distance_metrics_mcda import correlations as corrs
 
@@ -166,7 +166,7 @@ Returns
 		Value of correlation coefficient between two vectors
 
 .. code-block:: python
-	
+
 	import numpy as np
 	from distance_metrics_mcda import correlations as corrs
 
@@ -230,7 +230,7 @@ Returns
 		vector of criteria weights
 		
 .. code-block:: python
-	
+
 	import numpy as np
 	from distance_metrics_mcda import weighting_methods as mcda_weights
 
@@ -260,7 +260,7 @@ Returns
 		Vector of criteria weights
 		
 .. code-block:: python
-	
+
 	import numpy as np
 	from distance_metrics_mcda import weighting_methods as mcda_weights
 
@@ -300,7 +300,7 @@ Returns
 		distance value between two vetors
 
 .. code-block:: python
-	
+
 	import numpy as np
 	from distance_metrics_mcda import distance_metrics as dists
 	
@@ -329,7 +329,7 @@ Returns
 		distance value between two vetors
 
 .. code-block:: python
-	
+
 	import numpy as np
 	from distance_metrics_mcda import distance_metrics as dists
 	
@@ -365,7 +365,7 @@ Returns
 		Normalized decision matrix
 
 .. code-block:: python
-	
+
 	matrix = np.array([[8, 7, 2, 1],
     [5, 3, 7, 5],
     [7, 5, 6, 4],
