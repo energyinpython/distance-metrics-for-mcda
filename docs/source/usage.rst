@@ -297,7 +297,7 @@ Parameters
 		Second vector containing values
 Returns
 	float
-		distance value between two vetors
+		distance value between two vectors
 
 .. code-block:: python
 
@@ -326,7 +326,7 @@ Parameters
 		Second vector containing values
 Returns
 	float
-		distance value between two vetors
+		distance value between two vectors
 
 .. code-block:: python
 
@@ -365,6 +365,9 @@ Returns
 		Normalized decision matrix
 
 .. code-block:: python
+
+	import numpy as np
+	from distance_metrics_mcda import normalizations as norms
 
 	matrix = np.array([[8, 7, 2, 1],
     [5, 3, 7, 5],
