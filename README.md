@@ -1,6 +1,6 @@
 # distance-metrics-for-mcda
 
-Python 3 library for Multi-Criteria Decision Analysis based on distance metrics.
+Python 3 library for Multi-Criteria Decision Analysis based on distance metrics. The documentation is provided [here](https://distance-metrics-for-mcda.readthedocs.io/en/latest/)
 
 # Installation
 
