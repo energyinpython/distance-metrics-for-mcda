@@ -1,12 +1,12 @@
 ﻿G,Criteria group,Cj,Explanation,Type
-G1,Hardware and performance,C1,Front camera resolution(megapixels),1
- , ,C2,Rear camera resolution(megapixels),1
- , ,C3,Battery capacity(mAh),1
- , ,C4,RAM(GB),1
- , ,C5,Screen size(inch),1
+G1,Hardware and performance,C1,Front camera resolution (megapixels),1
+ , ,C2,Rear camera resolution (megapixels),1
+ , ,C3,Battery capacity (mAh),1
+ , ,C4,RAM (GB),1
+ , ,C5,Screen size (inch),1
  , ,C6,CPU rating,1
 G2,Appearance,C7,Appearance rating,1
-G3,Brand,C8,Market share(%),1
- , ,C9,Brand favorable rate(%),1
+G3,Brand,C8,Market share (%),1
+ , ,C9,Brand favorable rate (%),1
 G4,Accessory,C10,Accessory rating,1
-G5,Price,C11,Price(RMB),-1
+G5,Price,C11,Price (RMB),-1

@@ -1,50 +1,60 @@
-import numpy as np
 import copy
 import itertools
+import numpy as np
 
 
-# euclidean distance
+# Euclidean distance
 def euclidean(A, B):
     """
     Calculate Euclidean distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = euclidean(A, B)
     """
+
     tmp = np.sum(np.square(A - B))
     return np.sqrt(tmp)
 
-# manhattan distance
+# Manhattan distance
 def manhattan(A, B):
     """
     Calculate Manhattan (Taxicab) distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = manhattan(A, B)
     """
+
     tmp = np.sum(np.abs(A - B))
     return tmp
 
 
-# for hausdorff distance
+# for Hausdorff distance
 def hausdorff_distance(A, B):
     min_h = np.inf
     for i, j in itertools.product(range(len(A)), range(len(B))):
@@ -62,45 +72,55 @@ def hausdorff_distance(A, B):
     return max_h
 
 
-# hausdorff distance
-"""
+# Hausdorff distance
+def hausdorff(A, B):
+    """
     Calculate Hausdorff distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = hausdorff(A, B)
     """
-def hausdorff(A, B):
+
     ah = hausdorff_distance(A, B)
     bh = hausdorff_distance(B, A)
     return max(ah, bh)
 
 
-# correlation distance
+# Correlation distance
 def correlation(A, B):
     """
     Calculate Correlation distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = correlation(A, B)
     """
+
     numerator = np.sum((A - np.mean(A)) * (B - np.mean(B)))
     denominator = np.sqrt(np.sum((A - np.mean(A)) ** 2)) * np.sqrt(np.sum((B - np.mean(B)) ** 2))
     if denominator == 0:
@@ -108,23 +128,28 @@ def correlation(A, B):
     return 1 - (numerator / denominator)
 
 
-# chebyshev distance
+# Chebyshev distance
 def chebyshev(A, B):
     """
     Calculate Chebyshev distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = chebyshev(A, B)
     """
+
     max_h = -np.inf
     for i, j in itertools.product(range(len(A)), range(len(B))):
         d = np.abs(A[i] - B[j])
@@ -134,23 +159,28 @@ def chebyshev(A, B):
     return max_h
 
 
-# standardized euclidean distance
+# Standardized euclidean distance
 def std_euclidean(A, B):
     """
     Calculate Standardized Euclidean distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = std_euclidean(A, B)
     """
+
     tab_std = np.vstack((A, B))
     stdv = np.sum(np.square(tab_std - np.mean(tab_std, axis = 0)), axis = 0)
     stdv = np.sqrt(stdv / tab_std.shape[0])
@@ -159,23 +189,28 @@ def std_euclidean(A, B):
     return np.sqrt(tmp)
 
 
-# cosine distance
+# Cosine distance
 def cosine(A, B):
     """
     Calculate Cosine distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = cosine(A, B)
     """
+
     numerator = np.sum(A * B)
     denominator = (np.sqrt(np.sum(np.square(A)))) * (np.sqrt(np.sum(np.square(B))))
     if denominator == 0:
@@ -183,23 +218,28 @@ def cosine(A, B):
     return 1 - (numerator / denominator)
 
 
-# cosine similarity measure
+# Cosine similarity measure
 def csm(A, B):
     """
     Calculate Cosine similarity measure of distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ---------
+    >>> distance = csm(A, B)
     """
+
     numerator = np.sum(A * B)
     denominator = (np.sqrt(np.sum(A))) * (np.sqrt(np.sum(B)))
     if denominator == 0:
@@ -207,44 +247,54 @@ def csm(A, B):
     return numerator / denominator
 
 
-# squared euclidean distance
+# Squared Euclidean distance
 def squared_euclidean(A, B):
     """
     Calculate Squared Euclidean distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = squared_euclidean(A, B)
     """
+
     tmp = np.sum(np.square(A - B))
     return tmp
 
 
-# sorensen or bray-curtis distance
+# Sorensen or Bray-Curtis distance
 def bray_curtis(A, B):
     """
     Calculate Bray-Curtis distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = bray_curtis(A, B)
     """
+
     numerator = np.sum(np.abs(A - B))
     denominator = np.sum(A + B)
     if denominator == 0:
@@ -252,23 +302,28 @@ def bray_curtis(A, B):
     return numerator / denominator
 
 
-# canberra distance
+# Canberra distance
 def canberra(A, B):
     """
     Calculate Canberra distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = canberra(A, B)
     """
+
     numerator = np.abs(A - B)
     denominator = A + B
     denominator[denominator == 0] = 1
@@ -276,44 +331,54 @@ def canberra(A, B):
     return tmp
 
 
-# lorentzian distance
+# Lorentzian distance
 def lorentzian(A, B):
     """
     Calculate Lorentzian distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = lorentzian(A, B)
     """
+
     tmp = np.sum(np.log(1 + np.abs(A - B)))
     return tmp
 
 
-# jaccard distance
+# Jaccard distance
 def jaccard(A, B):
     """
     Calculate Jaccard distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    -----------
+    >>> distance = jaccard(A, B)
     """
+
     numerator = np.sum(np.square(A - B))
     denominator = np.sum(A ** 2) + np.sum(B ** 2) - np.sum(A * B)
     if denominator == 0:
@@ -321,23 +386,28 @@ def jaccard(A, B):
     return numerator / denominator
 
 
-# dice distance
+# Dice distance
 def dice(A, B):
     """
     Calculate Dice distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = dice(A, B)
     """
+
     numerator = np.sum(np.square(A - B))
     denominator = np.sum(A ** 2) + np.sum(B ** 2)
     if denominator == 0:
@@ -345,23 +415,28 @@ def dice(A, B):
     return numerator / denominator
 
 
-# bhattacharyya distance
+# Bhattacharyya distance
 def bhattacharyya(A, B):
     """
     Calculate Bhattacharyya distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ---------
+    >>> distance = bhattacharyya(A, B)
     """
+
     value = (np.sum(np.sqrt(A * B)))**2
     if value == 0:
         tmp = 0
@@ -370,113 +445,138 @@ def bhattacharyya(A, B):
     return tmp
 
 
-# hellinger distance
+# Hellinger distance
 def hellinger(A, B):
     """
     Calculate Hellinger distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    -----------
+    >>> distance = hellinger(A, B)
     """
+
     value = 1 - np.sum(np.sqrt(A * B))
     if value < 0:
         value = 0
     return 2 * np.sqrt(value)
 
 
-# matusita distance
+# Matusita distance
 def matusita(A, B):
     """
     Calculate Matusita distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = matusita(A, B)
     """
+
     value = 2 - 2 * (np.sum(np.sqrt(A * B)))
     if value < 0:
         value = 0
     return np.sqrt(value)
 
 
-# squared-chord distance
+# Squared-chord distance
 def squared_chord(A, B):
     """
     Calculate Squared-Chord distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ---------
+    >>> distance = squared_chord(A, B)
     """
+
     tmp = np.sum(np.square(np.sqrt(A) - np.sqrt(B)))
     return tmp
 
 
-# pearson chi-square distance
+# Pearson chi-square distance
 def pearson_chi_square(A, B):
     """
     Calculate Pearson Chi Square distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ---------
+    >>> distance = pearson_chi_square(A, B)
     """
+
     numerator = np.square(A - B)
     denominator = copy.deepcopy(B)
     denominator[denominator == 0] = 1
     tmp = np.sum(numerator / denominator)
     return tmp
 
-# squared chi-square distance
+# Squared chi-square distance
 def squared_chi_square(A, B):
     """
     Calculate Squared Chi Sqaure distance between two vectors `A` and `B`.
 
     Parameters
-    ----------
+    -----------
         A : ndarray
             First vector containing values
         B : ndarray
             Second vector containing values
 
     Returns
-    -------
+    --------
         float
-            distance value between two vetors
+            distance value between two vectors
+
+    Examples
+    ----------
+    >>> distance = squared_chi_square(A, B)
     """
+
     numerator = np.square(A - B)
     denominator = A + B
     denominator[denominator == 0] = 1

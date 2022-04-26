@@ -7,7 +7,7 @@ copyright = '2022, energyinpython'
 author = 'energyinpython'
 
 release = '0.1'
-version = '0.0.4'
+version = '0.0.5'
 
 # -- General configuration
 
@@ -17,7 +17,14 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+	'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
+	'nbsphinx',
+	'autoapi.extension',
 ]
+
+autoapi_type = 'python'
+autoapi_dirs = ["../distance_metrics_mcda"]  # location to parse for API reference
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),

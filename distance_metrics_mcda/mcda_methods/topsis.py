@@ -30,6 +30,12 @@ class TOPSIS(MCDA_method):
         -------
             ndrarray
                 Preference values of each alternative. The best alternative has the highest preference value. 
+        
+        Examples
+        ----------
+        >>> topsis = TOPSIS(normalization_method = minmax_normalization, distance_metric = euclidean)
+        >>> pref = topsis(matrix, weights, types)
+        >>> rank = rank_preferences(pref, reverse = True)
         """
         TOPSIS._verify_input_data(matrix, weights, types)
         return TOPSIS._topsis(matrix, weights, types, self.normalization_method, self.distance_metric)

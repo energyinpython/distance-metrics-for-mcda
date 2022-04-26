@@ -1,6 +1,6 @@
+import copy
 import numpy as np
 import pandas as pd
-import copy
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -123,10 +123,10 @@ def main():
     list_alt_names = [r'$A_{' + str(i) + '}$' for i in range(1, df_data.shape[0] + 1)]
     cols = [r'$C_{' + str(j) + '}$' for j in range(1, data.shape[1] + 1)]
 
-    # part 1 - study with single weighting method
+    # part 1 - study with single distance metric
 
     # Determine criteria weights with chosen weighting method
-    weights = mcda_weights.critic_weighting(matrix, types)
+    weights = mcda_weights.critic_weighting(matrix)
 
     # Create the TOPSIS method object
     topsis = TOPSIS(normalization_method = norms.minmax_normalization, distance_metric = dists.euclidean)

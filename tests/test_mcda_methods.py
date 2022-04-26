@@ -37,7 +37,7 @@ class Test_Rank_preferences(unittest.TestCase):
         (pp. 1-30). Springer, Cham."""
 
         pref = np.array([0.387, 0.327, 0.391, 0.615, 0.868, 0.493])
-        test_result =rank_preferences(pref , reverse = False)
+        test_result =rank_preferences(pref , reverse = True)
         real_result = np.array([5, 6, 4, 2, 1, 3])
         self.assertEqual(list(test_result), list(real_result))
 
@@ -46,8 +46,8 @@ def main():
     test_topsis = Test_TOPSIS()
     test_topsis.test_topsis()
 
-    # test_rank_preferences = Test_Rank_preferences()
-    # test_rank_preferences.test_rank_preferences()
+    test_rank_preferences = Test_Rank_preferences()
+    test_rank_preferences.test_rank_preferences()
 
 
 if __name__ == '__main__':
