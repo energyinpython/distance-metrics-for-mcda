@@ -1,7 +1,7 @@
 import numpy as np
 
-from ..normalizations import *
-from ..distance_metrics import *
+from ..normalizations import minmax_normalization
+from ..distance_metrics import euclidean
 from .mcda_method import MCDA_method
 
 class TOPSIS(MCDA_method):
